@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Output Page with 3D Lines Background</title>
+    <link rel="stylesheet" href="output_page.css">
+</head>
+<body>
+    <!-- Full-screen 3D Moving Black-and-White Lines Background -->
+    <div class="lines-background"></div>
+
+    <div class="container">
+        <div class="content-box">
+            <h1>Problem Statement</h1>
+            <div id="problemStatement" class="problem-statement">
+                <!-- Problem statement will be inserted here -->
+            </div>
+        </div>
+        
+        <div class="content-box">
+            <h2>Personal Information</h2>
+            <div id="personalInfo" class="personal-info">
+                <!-- Personal information will be inserted here -->
+            </div>
+            
+            <h2>Skills</h2>
+            <div id="skills" class="skills">
+                <!-- Skills will be inserted here -->
+            </div>
+        </div>
+    </div>
+    
+    <button id="downloadPdf" class="download-btn">Download PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="output_page.js"></script>
+</body>
+</html>

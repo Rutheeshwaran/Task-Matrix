@@ -1,0 +1,259 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('mju.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+/* Body background with fade-in and subtle scaling */
+body {
+  background-image: url('mju.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: hidden;
+  opacity: 0; /* Initial state for fade-in */
+  animation: fadeInBackground 2.5s ease-in-out forwards, backgroundScale 5s ease-in-out infinite alternate; /* Background Fade-in and Scaling */
+}
+
+/* Fade-in effect for the background */
+@keyframes fadeInBackground {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Subtle background scaling effect */
+@keyframes backgroundScale {
+  0% {
+    background-size: 100%; /* Initial size */
+    filter: brightness(100%);
+  }
+  100% {
+    background-size: 105%; /* Slight zoom */
+    filter: brightness(120%); /* Slightly brighten the background */
+  }
+}
+
+
+/* Contact Container */
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.1); /* Transparent background */
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+  animation: fadeIn 2s ease-in-out, slideIn 1s ease-in-out;
+}
+
+/* Keyframes for fade-in and slide-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.contact-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* Image Section */
+.image-section {
+  padding-right: 20px;
+}
+
+.contact-image {
+  max-width: 250px;
+  border-radius: 15px;
+  transition: transform 0.6s ease-in-out;
+  animation: rotateIn 1.5s ease-in-out;
+}
+
+/* Rotation effect */
+.contact-image:hover {
+  transform: rotate(360deg) scale(1.1);
+}
+
+/* Keyframe for rotating in the image */
+@keyframes rotateIn {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Contact Section */
+.contact-section {
+  max-width: 300px;
+}
+
+/* Heading Animation */
+h1 {
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Contact Info */
+.contact-info p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.12);
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s, transform 0.4s ease;
+  animation: slideIn 1.5s ease-in-out;
+}
+
+.contact-info p:hover {
+  background-color: #6a5acd;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(106, 90, 205, 0.5);
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 22px;
+}
+
+.contact-info p:hover .icon {
+  transform: scale(1.2);
+  transition: transform 0.3s;
+}
+
+/* Logo Section */
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.7rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-50px); /* Start position (above screen) */
+  animation: logoSlideIn 2s ease-in-out forwards; /* Drift down and fade in */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+@keyframes logoSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Logo Image Hover Effect */
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.logo img:hover {
+  transform: scale(1.2);
+}
+
+/* Nav Button */
+.nav-button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  position: absolute;
+  top: 100px;
+  left: 70px;
+  opacity: 0;
+  transform: translateX(-50px); /* Slide in from the left */
+  animation: buttonSlideIn 2s ease-in-out forwards; /* Button appears with sliding effect */
+  transition: color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes buttonSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover Effect for Nav Button */
+.nav-button:hover {
+  color: rgb(173, 171, 171);
+  border-color: grey;
+  box-shadow: 0px 4px 10px rgba(174, 74, 214, 0.712); /* Add glowing effect on hover */
+  transform: scale(1.05); /* Slight pop-out effect */
+}
+
+/* Adding Particle Background */
+.particle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: url('particles.png') repeat;
+  animation: particle 20s linear infinite;
+}
+
+@keyframes particle {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

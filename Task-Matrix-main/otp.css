@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 100%);
+    animation: infiniteMove 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes infiniteMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+.verification-container {
+    display: flex;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 1px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    width: 800px;
+    height: 400px;
+}
+
+.image-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 90%;
+    border-radius: 15px;
+}
+
+.form-box {
+    width: 50%;
+    padding: px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.email-otp-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.email-otp-section input[type="email"] {
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+    margin-right: 10px;
+}
+
+.email-otp-section button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.email-otp-section button:hover {
+    background-color: #0056b3;
+}
+
+.otp-section {
+    margin-bottom: 20px;
+}
+
+.otp-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.otp-box input {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    transition: all 0.2s ease-in-out;
+}
+
+.otp-box input:hover {
+    transform: scale(1.1);
+}
+
+.verify-btn {
+    padding: 10px 30px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.verify-btn:hover {
+    background-color: #218838;
+}

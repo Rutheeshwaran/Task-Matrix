@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply the bold Montserrat font to the logo and get started button */
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Bold font weight */
+    font-size: 2.7rem;
+    color: #ffffff;
+    letter-spacing: 1px; /* Slightly increase space between letters */
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    animation: fadeIn 1s ease forwards; /* Fade in animation */
+}
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.7rem;
+    color: white;
+    display: flex;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-49px); /* Start position (above screen) */
+    animation: logoSlideIn 2s ease-in-out forwards; /* Drift down and fade in */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+
+@keyframes logoSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+.nav-button {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 10px;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    animation: fadeIn 1s ease forwards; /* Fade in animation */
+}
+
+.nav-button:hover {
+    color: black;
+    animation: bounce 0.5s ease; /* Bounce animation on hover */
+}
+
+.nav-button:hover .material-icons {
+    color: black; /* Ensure the icon color changes on hover */
+}
+
+body {
+    background-image: url('blac.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Arial', sans-serif;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container {
+    display: flex;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 1000px;
+    max-width: 90%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1s ease forwards; /* Slide in animation */
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.image-section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(53, 50, 50);
+    border-radius: 20px 0 0 20px;
+    animation: zoomIn 1s ease forwards; /* Zoom in animation */
+}
+
+.image-section img {
+    border-radius: 10%;
+    width: 90%;
+    animation: fadeInUp 1s ease forwards; /* Fade and slide up animation for images */
+    transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+/* Add hover effect for image with pop effect */
+.image-section img:hover {
+    animation: pop 0.3s ease forwards; /* Trigger the pop animation */
+}
+
+/* Animation for form section */
+.form-section {
+    padding: 40px;
+    width: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 20px; 
+    animation: fadeIn 1s ease forwards; /* Fade in animation */
+    transition: box-shadow 0.3s ease; /* Transition for shadow */
+}
+
+/* Add hover effect for form section */
+.form-section:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Add shadow effect */
+}
+
+/* Add pop effect on hover */
+.form-section:hover h2,
+.form-section:hover p,
+.form-section:hover label,
+.form-section:hover input,
+.form-section:hover select {
+    animation: pop 0.3s ease forwards; /* Trigger the pop animation */
+}
+
+.form-section h2 {
+    margin-bottom: 20px;
+    color: white;
+    animation: popIn 0.5s ease forwards; /* Slide in animation */
+}
+
+.form-section p {
+    color: white;
+    margin-bottom: 20px;
+    animation: popIn 0.5s ease forwards;
+}
+
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    animation: popIn 0.5s ease forwards;
+}
+
+.form-section form label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: white;
+    animation: popIn 0.5s ease forwards;
+}
+
+.form-section form input,
+.form-section form select {
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #f5f5f5;
+    font-size: 16px;
+    animation: popIn 0.5s ease forwards; /* Pop in animation */
+}
+
+/* Button styles */
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+    animation: fadeIn 1s ease forwards; /* Fade in animation */
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Slightly enlarge */
+    }
+    100% {
+        transform: scale(1); /* Back to original size */
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

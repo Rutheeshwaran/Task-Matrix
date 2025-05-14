@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Task Matrix - Login</title>
+    <link rel="stylesheet" href="signup1.css">
+</head>
+<body>
+    <header style="position: absolute; top: 10px; left: 20px; z-index: 10;">
+        <div class="logo" style="display: flex; align-items: center;">
+            <img src="logo.png" alt="Task Matrix Logo" style="height: 45px; margin-right: 10px;">
+            <h1 style="font-size: 1.5rem; color: white;">Task Matrix</h1>
+        </div>
+    </header>
+    
+    <a href="home.html" class="nav-button">
+        <span class="material-icons">home</span> Home
+    </a>
+    <div class="login-container">
+        <div class="image-section">
+            <img src="signup.png" alt="Profile Image">
+        </div>
+        <div class="form-section">
+            <h2>Create new Account</h2>
+            <p>Already Registered? <a href="login.html">Log in here</a></p>
+            <form id="signupForm">
+                <label for="name">NAME</label>
+                <input type="text" id="name" placeholder=" Example: Jiara Martins" required>
+                
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" placeholder=" Example: hello@reallygreatsite.com" required>
+                
+                <label for="password">PASSWORD</label>
+                <input type="password" id="password" placeholder="Example: ******" required>
+                
+                <label for="dob">DATE OF BIRTH</label>
+                <input type="date" id="dob" required>
+                
+                <button type="submit">Sign up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="signup.js"></script>
+</body>
+</html>

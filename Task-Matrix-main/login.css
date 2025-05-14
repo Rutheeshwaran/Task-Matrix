@@ -1,0 +1,296 @@
+/* Global Style */
+
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 2.7rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(-50px); /* Start position (above screen) */
+  animation: logoSlideIn 2s ease-in-out forwards; /* Drift down and fade in */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+@keyframes logoSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-image: url('bls.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.3s ease; /* Smooth scaling */
+  animation: fadeIn 1s ease; /* Fade in effect */
+}
+
+.nav-button:hover {
+  color:rgb(85, 75, 177);;
+  transform: scale(1.1); /* Scale up on hover */
+}
+
+.nav-button:hover .material-icons {
+  color: rgb(85, 75, 177); /* Ensure the icon color changes on hover */
+}
+
+.container {
+  display: flex;
+  background-color: #262626;
+  border-radius: 20px;
+  padding: 30px; /* Increased padding for overall container */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  animation: slideIn 1s ease forwards; /* Slide in effect for container */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for box shadow */
+}
+
+/* Add hover effect for container */
+.container:hover {
+  box-shadow: 0px 12px 30px rgba(70, 233, 83, 0.171); /* Increase shadow on hover */
+  transform: translateY(-5px) rotate(2deg); /* Lift the box slightly and rotate on hover */
+}
+
+.image-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px; /* Add some spacing between image and login section */
+  position: relative; /* Position relative for overlay positioning */
+}
+
+.image-section img {
+  width: 400px; /* Increased width for image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 20px;
+  animation: fadeInUp 1s ease forwards; /* Fade in and slide up effect */
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease; /* Smooth transition for transform and shadow */
+}
+
+/* Combined hover effect for image */
+.image-section img:hover {
+  animation: shake 0.5s, scale 0.5s forwards; /* Combine shake and scale animations */
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5); /* Add more shadow on hover */
+  filter: brightness(1.1); /* Brighten the image slightly */
+}
+
+/* Overlay for image section */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition */
+  border-radius: 20px; /* Match the border radius of the image */
+}
+
+/* Show overlay on image hover */
+.image-section:hover .image-overlay {
+  opacity: 1; /* Show overlay on hover */
+}
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Keyframes for shake animation */
+@keyframes shake {
+  0% {
+      transform: translateX(0);
+  }
+  25% {
+      transform: translateX(-5px);
+  }
+  50% {
+      transform: translateX(5px);
+  }
+  75% {
+      transform: translateX(-5px);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+/* Keyframes for scale animation */
+@keyframes scale {
+  0% {
+      transform: scale(1);
+  }
+  100% {
+      transform: scale(1.1);
+  }
+}
+
+
+.login-section {
+  padding: 40px; /* Increased padding */
+  background-color: #fff;
+  border-radius: 20px;
+  width: 350px; /* Increased width for login box */
+  animation: fadeIn 1s ease forwards; /* Fade in effect for login section */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for background color and shadow */
+}
+
+/* Add hover effect for login section */
+.login-section:hover {
+  background-color:mintcream; /* Change background color on hover */
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  transform: translateY(-5px) scale(1.02); /* Lift the box slightly and scale it up */
+}
+
+.login-section h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+  animation: popIn 0.5s ease forwards; /* Pop in effect */
+}
+
+.login-section p {
+  text-align: center;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.login-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-section label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.login-section input {
+  padding: 12px; /* Increased input size */
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border 0.3s; /* Smooth border transition */
+}
+
+/* Input focus effect */
+.login-section input:focus {
+  border: 1px solid #000; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow on focus */
+}
+
+.login-section button {
+  padding: 12px; /* Increased button size */
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+/* Button hover effects */
+.login-section button:hover {
+  background-color: white;
+  color: black;
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.login-section .links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-section .links a {
+  text-decoration: none;
+  color: gray;
+  font-size: 14px;
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+/* Link hover effect */
+.login-section .links a:hover {
+  color: black; /* Change color on hover */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateY(-50%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+      transform: scale(0.9);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Upload</title>
+    <header style="position: absolute; top: 10px; left: 20px; z-index: 10;"></header>
+        <div class="logo" style="display: flex; align-items: center;">
+            <img src="logo.png" alt="Task Matrix Logo" style="height: 300px; width: 150px; margin-right: 10px;">
+            <h1 style="font-size: 1.8rem; color: white;">Task Matrix</h1>
+        </div>
+    </header>
+    <link rel="stylesheet" href="Resume file.css">
+    <style>
+        .upload-box {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 2px dashed #007bff;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background-color: #f8f9fa;
+        }
+        .upload-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .name-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+        .name-input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        .file-input {
+            display: none;
+        }
+        .upload-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .upload-btn:hover {
+            background-color: #0056b3;
+        }
+        .file-name {
+            margin-top: 10px;
+            font-style: italic;
+            color: #6c757d;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .upload-box.pulse {
+            animation: pulse 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer-container">
+        <!-- Box 1: Form and Image -->
+        <div class="box-container">
+            <div class="upload-card">
+                <h1>Upload</h1>
+                <form>
+                    <label for="problemStatement">Problem Statement</label>
+                    <input type="text" id="problemStatement" placeholder="Enter problem statement">
+                    
+                    <label for="numPersons">No. of Members</label>
+                    <input type="number" id="numPersons" min="1" placeholder="3">
+                    
+                    <button type="button" class="generate-box-btn" onclick="generateUploadBoxes()">Generate Boxes</button>
+                </form>
+            </div>
+            
+            <!-- Image on the side -->
+            <div class="image-box">
+                <img src="resume.png" alt="Upload Image" class="right-img">
+            </div>
+        </div>
+        
+        <!-- Box 2: Generated Upload Boxes -->
+        <div class="upload-box-container">
+            <h2>Upload Resumes</h2>
+            <div id="uploadContainer" class="upload-container">
+                <!-- Upload boxes will be generated here -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function generateUploadBoxes() {
+            const numPersons = document.getElementById('numPersons').value;
+            const uploadContainer = document.getElementById('uploadContainer');
+            
+            // Clear previous upload boxes
+            uploadContainer.innerHTML = '';
+            
+            // Generate new upload boxes based on input
+            for (let i = 0; i < numPersons; i++) {
+                const uploadBox = document.createElement('div');
+                uploadBox.className = 'upload-box';
+                uploadBox.innerHTML = `
+                    <input type="text" class="name-input" placeholder="Enter name">
+                    <input type="file" id="file-${i}" class="file-input" accept=".pdf,.doc,.docx">
+                    <button type="button" class="upload-btn" onclick="triggerFileInput(${i})">Upload Resume</button>
+                    <div class="file-name" id="file-name-${i}"></div>
+                `;
+                uploadContainer.appendChild(uploadBox);
+                
+                // Add pulse animation
+                setTimeout(() => {
+                    uploadBox.classList.add('pulse');
+                    setTimeout(() => uploadBox.classList.remove('pulse'), 1000);
+                }, i * 200);
+            }
+        }
+
+        function triggerFileInput(index) {
+            document.getElementById(`file-${index}`).click();
+        }
+
+        // Event delegation for file input changes
+        document.getElementById('uploadContainer').addEventListener('change', function(event) {
+            if (event.target.classList.contains('file-input')) {
+                const fileInput = event.target;
+                const fileNameElement = document.getElementById(`file-name-${fileInput.id.split('-')[1]}`);
+                const uploadBox = fileInput.closest('.upload-box');
+                
+                if (fileInput.files.length > 0) {
+                    fileNameElement.textContent = `File selected: ${fileInput.files[0].name}`;
+                    uploadBox.style.borderColor = '#28a745';  // Change border color to green
+                } else {
+                    fileNameElement.textContent = '';
+                    uploadBox.style.borderColor = '#007bff';  // Reset border color
+                }
+                
+                // Add pulse animation
+                uploadBox.classList.add('pulse');
+                setTimeout(() => uploadBox.classList.remove('pulse'), 1000);
+            }
+        });
+    </script>
+</body>
+</html>

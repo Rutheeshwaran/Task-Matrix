@@ -1,0 +1,202 @@
+/* Body Styling */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('klnmlmwe.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: waveBackground 10s ease-in-out infinite;
+}
+
+@keyframes waveBackground {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Bold font weight */
+    font-size: 2.7rem;
+    color: #ffffff;
+    letter-spacing: 1px; /* Slightly increase space between letters */
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    animation: fadeIn 1s ease forwards; /* Fade in animation */
+}
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.7rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(-50px); /* Start position (above screen) */
+    animation: logoSlideIn 2s ease-in-out forwards; /* Drift down and fade in */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+  
+  @keyframes logoSlideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+ 
+/* Outer container */
+.outer-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(141, 137, 137, 0.548);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Flex container for the two boxes */
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Form Box */
+.upload-card {
+    width: 50%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    /*backdrop-filter: blur(10px);*/
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.upload-card:hover {
+    transform: scale(1.02);
+}
+
+/* Image Box */
+.image-box {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: float 3s ease-in-out infinite;
+}
+
+.image-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.image-box img:hover {
+    transform: scale(1.05);
+}
+
+/* Input and Label styling */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+input[type="text"], input[type="number"] {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.generate-box-btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100%;
+    height: 49px;
+    font-size: large;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.generate-box-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Upload Boxes Section */
+.upload-box-container {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.upload-box-container h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Flexbox for the generated upload buttons */
+.upload-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Upload box */
+.upload-box {
+    flex: 0 1 calc(25% - 20px);
+    text-align: center;
+    padding: 20px;
+    border: 2px dashed #007bff;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+/* Animation for upload boxes */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Float animation for image box */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
